@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>😈 Prank</title>
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+    margin-top:100px;
+    background:#111;
+    color:white;
+}
+button{
+    font-size:20px;
+    padding:15px 30px;
+    background:red;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="page1">
+    <h1>Kya hal hain bhai 😎</h1>
+    <p>Ye cheez open krna har kisi k bas ki baat nahi 😈</p>
+    <button onclick="goPage2()">Himmat hai tou mujhe open kr</button>
+</div>
+
+<div id="page2" style="display:none;">
+    <h1>System Checking... 🧠</h1>
+    <h2 id="count">3</h2>
+</div>
+
+<div id="page3" style="display:none;">
+    <h1>😂😂😂</h1>
+    <h1>SUNDAY MUBARAK 🎉</h1>
+    <p>Prank ho gaya bhai 😜</p>
+</div>
+
+<script>
+function goPage2(){
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="block";
+
+    let c = 3;
+    let timer = setInterval(()=>{
+        c--;
+        document.getElementById("count").innerText = c;
+        if(c === 0){
+            clearInterval(timer);
+            document.getElementById("page2").style.display="none";
+            document.getElementById("page3").style.display="block";
+        }
+    },1000);
+}
+</script>
+
+</body>
+</html>
